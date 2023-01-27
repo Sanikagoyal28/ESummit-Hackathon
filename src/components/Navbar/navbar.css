@@ -1,0 +1,36 @@
+.navbarH{
+    width:100vw;
+    position: fixed;
+    top:0;
+    left:0;
+    background-color: #6c9ee8;
+    padding:0;
+    height:56px;
+}
+
+.titleH{
+    font-family: 'Kaushan Script';
+font-style: normal;
+font-weight: 400;
+font-size: 1.5rem;
+line-height: 58px;
+width:40px;
+margin-top: 0;
+margin-left:2vw;
+color: rgba(255, 255, 255, 0.9);
+}
+.loginH{
+    float: right;
+    margin:0;
+    background: none;
+    outline: none;
+    border: none;
+    font-family: 'Montserrat';
+font-style: normal;
+font-weight: 900;
+font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-top:-65px;
+    margin-right:1.5vw;
+    cursor: pointer;
+}

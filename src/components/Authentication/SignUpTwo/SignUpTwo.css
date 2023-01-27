@@ -1,0 +1,40 @@
+#signInput{
+    margin-bottom:4px;
+}
+#signPwd{
+    margin-top:5px;
+}
+#signInput2{
+    margin-top:22px;
+}
+#SEye {
+    color: white;
+    opacity: 0.9;
+    z-index: 4;
+    margin-left:26.5vw;
+    position:relative;
+    top:52px;
+    cursor: pointer;
+}
+
+#lockIconS {
+    margin-left:0.5vw;
+    position:relative;
+    top:61px;
+  height:24px;
+  width:24px;
+}
+#signNameWrong{
+    margin-top:4px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.85rem;
+    line-height: 15px;
+    margin-bottom:0px;
+    color: #f37777;
+    display: none;
+}
+#signInvalidPwdWrong{
+    display:none;
+}

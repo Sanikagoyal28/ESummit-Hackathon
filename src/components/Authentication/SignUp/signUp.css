@@ -1,0 +1,21 @@
+#signName1{
+    margin-bottom: 4px;
+}
+#signName{
+    display: none;
+}
+#signInvalidEmail{
+    display: none;
+}
+#signEmail{
+    margin-top:-18px;
+    margin-bottom:4px;
+}
+.emailSignIcon{
+    margin-left:0.7vw;
+    opacity:0.85;
+    position:relative;
+    top:37px;
+      width: 24px;
+      height:19px;
+}

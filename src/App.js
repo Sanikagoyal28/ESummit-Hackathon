@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import EmailVerify from "./components/Authentication/EmailVerify/emailVerify";
+import ForgotPwd from "./components/Authentication/ForgotPassword/forgotPwd";
+import Login from "./components/Authentication/Login/login";
+import AuthOtp from "./components/Authentication/OTP/otp";
+import ResetPwd from "./components/Authentication/ResetPassword/resetPwd";
+import SignUp from "./components/Authentication/SignUp/signUp";
+import SignUpTwo from "./components/Authentication/SignUpTwo/SignUpTwo";
+import Homepage from "./components/Home/Homepage";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  return <>
+  <BrowserRouter>
+    <Routes>
+     
+    <Route exact path="/login" element={<Login />} />
+    <Route exact path="/forgot" element={<ForgotPwd />} />
+    <Route exact path="/otp" element={<AuthOtp />} />
+    <Route exact path="/reset" element={<ResetPwd />} />
+    <Route exact path="/signup" element={<SignUp />} />
+    <Route exact path="/signuptwo" element={<SignUpTwo />} />
+    <Route exact path="/verifyemail" element={<EmailVerify />} />
+    <Route exact path="/" element={<Homepage/>} />
+    
+    </Routes>
+  </BrowserRouter>
+  </>
 }
 
 export default App;

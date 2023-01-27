@@ -1,0 +1,15 @@
+
+ .fgtRstPwd{
+    margin-top:4px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.85rem;
+    line-height: 15px;
+    margin-bottom:0px;
+    color: #f37777;
+ }
+ #resetInput{
+    /* margin-top:px; */
+    margin-bottom:-35px;
+ }

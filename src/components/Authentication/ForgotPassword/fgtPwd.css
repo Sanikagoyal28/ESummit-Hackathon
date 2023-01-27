@@ -1,0 +1,68 @@
+#arrow{
+    width:30px;
+    height:30px;
+    margin-top:20px;
+}
+#authHeadTwo{
+    margin-top:20px;
+    font-size: 2.4rem;
+}
+.authFgtPwdBtn{
+    border:none;
+    width: 30vw;
+    height:40px;
+    margin-top:40px;
+    margin-bottom: 50px;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),  #6c9ee8;
+    border-radius: 10px;
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1rem;
+    line-height: 29px;
+    color: rgba(255, 255, 255, 0.8);
+    cursor:pointer;
+}
+#emailIconFgt{
+    margin-left:0.7vw;
+    position:relative;
+    top:34px;
+    
+    width:24px;
+    height:24px;
+    z-index:4;
+}
+ 
+@media(max-width:1000px){
+ #authHeadTwo{
+    font-size:2rem;
+ }  
+}
+@media(max-width:950px){ 
+ .authFgtPwdBtn{
+    width:37vw;
+ }
+}
+@media(max-width:800px){ 
+    .authFgtPwdBtn{
+       width:42vw;
+    }
+   }
+   @media(max-width:650px){ 
+    .authFgtPwdBtn{
+       width:52vw;
+    }
+   }
+   @media(max-width:500px){ 
+    .authFgtPwdBtn{
+       width:57vw;
+    }
+   }
+   @media(max-width:450px){ 
+    .authFgtPwdBtn{
+       width:72vw;
+    }
+    #authHeadTwo{
+        font-size: 1.8rem;
+    }
+   }

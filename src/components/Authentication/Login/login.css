@@ -1,0 +1,378 @@
+
+#loadSpinner {
+    z-index: 9999;
+    position: fixed;
+    top: 45vh;
+    left: 50vw;
+}
+
+.loginBg {
+    position: absolute;
+    width: 30vw;
+    height: fit-content;
+    left: 34.6vw;
+    top: 90px;
+   background-color: rgba(255, 255, 255, 0.7);
+   background-color:   #acc4fc;
+    box-shadow: 4px 8px 2px 2px rgba(238, 230, 230,);
+    border-radius: 16px;
+    z-index: 10;
+    padding:5px 1vw 10px 1.5vw;
+    display: flex;
+    flex-direction: column;
+}
+
+#emailIcon {
+  margin-left:0.7vw;
+  position:relative;
+  top:32px;
+    width: 25px;
+    height:20px;
+    opacity:0.85;
+}
+
+.authHead {
+   margin-top:30px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 2.5rem;
+    line-height: 51px;
+    color: #000;
+
+}
+
+.authEmail {
+    margin-top:10px;
+    /* margin-bottom: -10px; */
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1rem;
+    line-height: 20px;
+    color: #000;
+    margin-bottom:-16px;
+}
+
+.authEmailInput {
+    outline: none;
+    border: none;
+   
+/* margin-top:-50px; */
+    width: 26.5vw;
+    padding-left: 3vw;
+    height: 38px;
+    background: #EEF1FF;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    color: #000;
+
+}
+::placeholder {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size:0.9rem;
+    line-height: 20px;
+} 
+.invalidEmail {
+    margin-top:4px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 0.85rem;
+    line-height: 15px;
+    margin-bottom:0px;
+    color: #aa0a0a;
+    display: none;
+   
+}
+
+.authPwd {
+   /* margin-top:-20px; */
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 20px;
+   color:#000;
+    /* margin-bottom: -35px; */
+    margin-top:20px;
+    margin-bottom:-35px;
+}
+
+.authPwdInput {
+    outline: none;
+    border: none;
+    width: 26.5vw;
+    padding-left: 3vw;
+    height: 38px;
+    background: #EEF1FF;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    color:#000;
+    margin-top: 0;
+}
+
+.fgtPwd {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    color:  #6c9ee8;
+    cursor: pointer;
+    margin-left:20.4vw;
+    margin-top:4px;
+}
+#LEye {
+  opacity:0.9;
+    z-index: 4;
+    margin-left:26.5vw;
+    position:relative;
+    top:30px;
+    cursor: pointer;
+}
+
+#lockIcon {
+    margin-left:0.5vw;
+    position:relative;
+    top:49px;
+  height:23px;
+  width:23px;
+opacity:0.85;
+}
+
+.authSignIn {
+    border: none;
+    width: 9vw;
+    height: 38px;
+    
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),  #6c9ee8;
+    border-radius: 10px;
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.1rem;
+    line-height: 29px;
+    color: rgba(255, 255, 255, 0.8);
+    cursor: pointer;
+}
+
+#loginButton {
+    width: 29.5vw;
+}
+
+.authSignUp {
+    margin-left: 0.3vw;
+    width: 10vw;
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 900;
+    font-size: 1rem;
+    line-height: 29px;
+    color:#6c9ee8;
+    cursor: pointer;
+}
+
+#hrOr {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    width: 28vw;
+    margin-top:10px;
+}
+
+.createAcc {
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1rem;
+    margin-top:4px;
+    line-height: 29px;
+    color: #000;
+    text-align: center;
+    margin-top:-2px;
+}
+.AUTHENTICATION {
+    overflow: hidden;
+}
+
+@media(max-width:1000px){
+    #emailIcon{
+width:20px;
+    }
+    .emailSignIcon{
+        width:20px;
+    }
+    #lockIcon{
+height:20px;
+    }
+    #LEye{
+width:20px;
+margin-left:27vw;
+    }
+    .fgtPwd{
+        margin-left:17vw;
+    }
+}
+@media(max-width:950px){
+    .loginBg{
+        width:40vw;
+        margin-left:-5vw;
+    }
+    .authEmailInput{
+        width:37vw;
+    }
+    .authPwdInput{
+        width:37vw;
+    }
+    #LEye{
+        margin-left:34vw;
+    }
+    .fgtPwd{
+        margin-left:23vw;
+    }
+    #loginButton{
+        width:37vw;
+    }
+    .contGoogle{
+        width:37vw;
+    }
+    .authSignIn{
+        width:37vw;
+    }
+    #hrOr{
+        width:37vw;
+    }
+}
+@media(max-width:800px){
+    .loginBg{
+        width:45vw;
+        margin-left:-5vw;
+    }
+    .authEmailInput{
+        width:42vw;
+        padding-left:4vw;
+    }
+    .authPwdInput{
+        width:42vw;
+        padding-left: 4vw;
+    }
+    #LEye{
+        margin-left:38vw;
+    }
+    .fgtPwd{
+        margin-left:26vw;
+    }
+    #loginButton{
+        width:42vw;
+    }
+    .contGoogle{
+        width:42vw;
+    }
+    .authSignIn{
+        width:42vw;
+    }
+    #hrOr{
+        width:42vw;
+    }
+}
+@media(max-width:650px){
+    .loginBg{
+        width:55vw;
+        margin-left:-10vw;
+    }
+    .authEmailInput{
+        width:52vw;
+    padding-left: 5vw;
+    }
+    .authPwdInput{
+        width:52vw;
+        padding-left: 5vw;
+    }
+    #LEye{
+        margin-left:46vw;
+    }
+    #emailIcon{
+        width:20px;
+    }
+    .fgtPwd{
+        margin-left:29vw;
+    }
+    #loginButton{
+        width:52vw;
+    }
+    .contGoogle{
+        width:52vw;
+    }
+    .authSignIn{
+        width:52vw;
+    }
+    #hrOr{
+        width:52vw;
+    }
+}
+@media(max-width:500px){
+    .loginBg{
+        width:60vw;
+        margin-left:-14vw;
+    }
+    .authEmailInput{
+        width:57vw;
+    padding-left: 5vw;
+    }
+    .authPwdInput{
+        width:57vw;
+        padding-left: 5vw;
+    }
+    #LEye{
+        margin-left:50vw;
+    }
+    #emailIcon{
+        width:20px;
+    }
+    .fgtPwd{
+        margin-left:31vw;
+    }
+    #loginButton, .contGoogle, .authSignIn, #hrOr{
+        width:57vw;
+    }
+}
+@media(max-width:450px){
+    .loginBg{
+        width:75vw;
+        margin-left:-22vw;
+    }
+    .authHead{
+        font-size: 2.4rem;
+    }
+    .authEmailInput{
+        width:72vw;
+    padding-left: 6vw;
+    }
+    .authPwdInput{
+        width:72vw;
+        padding-left: 6vw;
+    }
+    #LEye{
+        margin-left:63vw;
+    }
+    #emailIcon{
+        width:20px;
+    }
+    .fgtPwd{
+        margin-left:40vw;
+    }
+    #loginButton, .contGoogle, .authSignIn, #hrOr{
+        width:72vw;
+    }
+}
