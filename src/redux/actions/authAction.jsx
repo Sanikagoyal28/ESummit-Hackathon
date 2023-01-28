@@ -11,20 +11,20 @@ const LogInUser = (data, condition) => {
             dispatch({ type: "REQUEST_STARTED" })
             await BaseUrl.post(`/auth/login/`, data)
                 .then((res) => {
-                    toast.success(`${res.data.message[0]}`, {
-                        position: "top-center",
-                        theme: "light",
-                    })
+                    // toast.success(`${res.data.message[0]}`, {
+                    //     position: "top-center",
+                    //     theme: "light",
+                    // })
                     dispatch({
                         type: "REQUEST_SUCCEDED",
                         payload: res.data
                     })
                 })
                 .catch((err) => {
-                    toast.error(`${err.response.data.message[0]}`, {
-                        position: "top-center",
-                        theme: "light",
-                    })
+                    // toast.error(`${err.response.data.message[0]}`, {
+                    //     position: "top-center",
+                    //     theme: "light",
+                    // })
                     dispatch({
                         type: "REQUEST_FAILED",
                         payload: err
@@ -42,20 +42,20 @@ const FgtPwdAction = (email, condition) => {
             dispatch({ type: "FGT_EMAIL_STARTED" })
             await BaseUrl.post(`/auth/sendemailOTP/`, { email })
                 .then((res) => {
-                    toast.success(`${res.data.message[0]}`, {
-                        position: "top-center",
-                        theme: "light",
-                    })
+                    // toast.success(`${res.data.message[0]}`, {
+                    //     position: "top-center",
+                    //     theme: "light",
+                    // })
                     dispatch({
                         type: "FGT_EMAIL_SUCCEDED",
                         payload: res.data
                     })
                 })
                 .catch((err) => {
-                    toast.error(`${err.response.data.message[0]}`, {
-                        position: "top-center",
-                        theme: "light",
-                    })
+                    // toast.error(`${err.response.data.message[0]}`, {
+                    //     position: "top-center",
+                    //     theme: "light",
+                    // })
                     dispatch({
                         type: "FGT_EMAIL_FAILED",
                         payload: err
@@ -71,20 +71,20 @@ const OtpAction = (data) => {
         dispatch({ type: "OTP_STARTED" })
         await BaseUrl.post(`/auth/verifyemailOTP/`, data)
             .then((res) => {
-                toast.success(`${res.data.message[0]}`, {
-                    position: "top-center",
-                    theme: "light",
-                })
+                // toast.success(`${res.data.message[0]}`, {
+                //     position: "top-center",
+                //     theme: "light",
+                // })
                 dispatch({
                     type: "OTP_SUCCEDED",
                     payload: res.data
                 })
             })
             .catch((err) => {
-                toast.error(`${err.response.data.message[0]}`, {
-                    position: "top-center",
-                    theme: "light",
-                })
+                // toast.error(`${err.response.data.message[0]}`, {
+                //     position: "top-center",
+                //     theme: "light",
+                // })
                 dispatch({
                     type: "OTP_FAILED",
                     payload: err
@@ -129,10 +129,10 @@ const SignUpUser = (email) => {
                 )
                 .catch((err) => {
                     console.log(err)
-                    toast.error(`${err.response.data.message[0]}`, {
-                        position: "top-center",
-                        theme: "light",
-                    })
+                    // toast.error(`${err.response.data.message[0]}`, {
+                    //     position: "top-center",
+                    //     theme: "light",
+                    // })
                     dispatch({
                         type: "SIGNUP_FAILED",
                         payload: err
