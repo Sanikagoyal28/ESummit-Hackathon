@@ -1,14 +1,16 @@
 import React from 'react'
 import './admin.css'
-import Header from '../Components/Header'
-import logo3 from '../Images/logo3.svg'
 
-const Admin = () => {
+// import logo3 from '../Images/logo3.svg'
+import Navbar from '../Navbar/navbar'
+
+
+const AdminPage = () => {
   return (
     <div>
-       <Header />
+       <Navbar />
        <p id="admin_head">Welcome to the admin page!</p> 
-  <img src={logo3} id="admin_img"/>
+  {/* <img src={logo3} id="admin_img"/> */}
   <div id="new_card">
      <div id="card1"> 
         <p id="ware">Sender's Name:India</p>
@@ -30,5 +32,5 @@ const Admin = () => {
   )
 }
 
-export default Admin
+export default AdminPage
 

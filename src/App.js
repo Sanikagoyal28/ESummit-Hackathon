@@ -1,4 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import AdminPage from "./components/Admin/admin";
 import Admin from "./components/Admin/admin";
 import AdminLogin from "./components/Authentication/adminLogin";
 import EmailVerify from "./components/Authentication/EmailVerify/emailVerify";
@@ -32,13 +33,15 @@ function App() {
     <Route exact path="/signuptwo" element={<SignUpTwo />} />
     <Route exact path="/verifyemail" element={<EmailVerify />} />
     <Route exact path="/adminlogin" element={<AdminLogin />} />
-    <Route exact path="/homepage" element={<HomePage/>} />
-    <Route path="/shipping" element={<Shipping />} />
-    <Route path="/tocustomer" element={<ToCustomer /> } />
-    <Route path="/tobusiness" element={<ToBusiness />} />
-    <Route path="/warehouse/:id" exact element={<WareHouse />} />
-    <Route path="/admin" exact element={<Admin /> } />
-    <Route path="/customer" exact element={<Customer /> } />
+
+    {isUser?<Route exact path="/homepage" element={<HomePage/>} />:null}
+    {isUser?<Route path="/shipping" element={<Shipping />} />:null}
+    {isUser?<Route path="/tocustomer" element={<ToCustomer /> } />:null}
+    {isUser?<Route path="/tobusiness" element={<ToBusiness />} />:null}
+    {isUser?<Route path="/warehouse/:id" exact element={<WareHouse />} />:null}
+    {isUser?<Route path="/admin" exact element={<AdminPage /> } />:null}
+    {isUser?<Route path="/customer" exact element={<Customer /> } />:null}
+    
     </Routes>
   </BrowserRouter>
   </>
