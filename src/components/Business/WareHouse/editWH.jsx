@@ -59,7 +59,6 @@ const data = {
     location,
     volume:volume,
     business:1,
-    id:id
 }
 console.log(data)
 const dispatch = useDispatch();
@@ -70,7 +69,7 @@ function handlePut (){
 
     return <>
         <div className="newWHDiv" id="editWarehouse">
-            <div className="newWHTitle">Add new Warehouse</div>
+            <div className="newWHTitle">Edit Warehouse</div>
             <div className="newWH1" >
                 <p className="newWHLocation">Enter location</p>
                 {/* <input type="text" className="newWHLocInput" placeholder="Enter your location" /> */}

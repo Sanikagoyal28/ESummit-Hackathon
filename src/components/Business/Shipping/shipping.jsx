@@ -11,6 +11,10 @@ function Shipping (){
         <div className="shippingBlock">
             <p className="shippingHead">Welcome <span id="shuttle">Shuttle</span>, choose among the two to ship an order.</p>
             <img src={shipping} className="shipImage" />
+            {/* <button className="export" onClick={()=>{
+                // document.getElementsByClassName("reExport").
+            }}>Export</button>
+            <button className="reExport">Re-export</button> */}
             <button className="shipping1" onClick={()=>{
                 navigate("/tobusiness")
             }}>Shipped to Business</button>

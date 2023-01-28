@@ -36,6 +36,7 @@ background: #6C9EE8;
 box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 border-radius: 32px;
 border:1px solid  #6C9EE8;
+/* opacity:0.5; */
     
 }
 .shipping2{
@@ -52,10 +53,25 @@ border:1px solid  #6C9EE8;
     position:absolute;
     left: 750px;
     top: 360px;
-    
-
 background: #6C9EE8;
 box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 border-radius: 32px;
+/* opacity:0.5; */
     
+}
+.export{
+    font-family: 'Montserrat';
+    font-weight: 600;
+    font-size: 1rem;
+    width:10vw;
+    height:36px;
+    color:#6C9EE8;
+border:none;
+outline:none;
+background-color: white;
+border:1px solid #6C9EE8;
+border-radius:12px;
+position: absolute;
+top:215px;
+left:55vw;
 }

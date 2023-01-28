@@ -96,7 +96,7 @@ export  function WarehouseEdit(id,data){
             type:"Edit_started",
             loading:false
         })
-        await BaseUrl.put(`/warehouse/warehouseRUD/${id}`, data, config)
+        await BaseUrl.put(`/warehouse/warehouseRUD/${id}/`, data, config)
         .then((res)=>{
             console.log(res)
             toast.success("Edition to warehouse added", {
@@ -119,5 +119,47 @@ export  function WarehouseEdit(id,data){
                 payload:Err
             })
         })
+    }
+}
+
+export  function CommodityFeed(id){
+    return async function (dispatch){
+        const accesstoken = localStorage.getItem("access token")
+        // const username = sessionStorage.getItem("name")
+        const config = {
+            headers: {
+                Authorization: `Bearer ${accesstoken}`
+            }
+        }
+        dispatch({
+            type:"Commodity_started",
+            loading:false
+        })
+        await BaseUrl.get(`/warehouse/commodities/?warehouse=${id}`, config)
+        .then((res)=>{
+            // toast.success(`${res.data.message[0]}`, {
+            //     position: "top-center",
+            //     theme: "light",
+            // })
+            console.log(res)
+            dispatch({
+                type:"Commodity_succeded",
+                payload:res
+            })
+        })
+        .catch((Err)=>{
+            console.log(Err)
+            dispatch({
+                type:"Commodity_failed",
+                payload:Err
+            })
+        })
+    }
+}
+
+export const CommodityFeed2=(data)=>{
+    return {
+        type:"Commodity_fake_add",
+        payload:data
     }
 }

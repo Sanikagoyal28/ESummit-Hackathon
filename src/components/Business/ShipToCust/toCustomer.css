@@ -27,9 +27,9 @@
 .S2CAddInput{
     width: 380px;
 height: 40px;
-left: 720px;
+left: 600px;
 top: 320px;
-
+/* margin-left:-6vw; */
 border: 1px solid  rgba(0,0,0,0.8);
 border-radius: 8px;
 font-family: 'Montserrat';
@@ -57,4 +57,24 @@ color: rgba(0, 0, 0, 0.5);
     line-height: 37px;
     color: #6C9EE8;
     margin-bottom:0;
+}
+.shippingCust{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1rem;
+    line-height: 37px;
+    outline: none;
+    border: none;
+    color: #FFFFFF;
+    width: 350px;
+    height: 40px;
+    margin-left:2vw;
+    margin-top:10px;
+  
+background: #6C9EE8;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 32px;
+/* opacity:0.5; */
+    
 }

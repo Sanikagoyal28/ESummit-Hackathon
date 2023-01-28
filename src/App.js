@@ -1,4 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Admin from "./components/Admin/admin";
 import AdminLogin from "./components/Authentication/adminLogin";
 import EmailVerify from "./components/Authentication/EmailVerify/emailVerify";
 import ForgotPwd from "./components/Authentication/ForgotPassword/forgotPwd";
@@ -17,6 +18,7 @@ import Customer from "./components/Customer/customer";
 import Landingpage from "./components/Home/Homepage";
 
 function App() {
+  const isUser= localStorage.getItem("access token")?true:false;
   return <>
   {/* <NewWarehouse /> */}
   <BrowserRouter>
@@ -35,6 +37,7 @@ function App() {
     <Route path="/tocustomer" element={<ToCustomer /> } />
     <Route path="/tobusiness" element={<ToBusiness />} />
     <Route path="/warehouse/:id" exact element={<WareHouse />} />
+    <Route path="/admin" exact element={<Admin /> } />
     <Route path="/customer" exact element={<Customer /> } />
     </Routes>
   </BrowserRouter>

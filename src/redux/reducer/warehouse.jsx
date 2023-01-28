@@ -1,7 +1,9 @@
 const initialState={
     warehouse:[],
     loading:false,
-    setWare:false
+    setWare:false,
+    commodity:[],
+    setComm:false
 }
 
 export const Warehouse= (state=initialState, action)=>{
@@ -27,6 +29,24 @@ export const Warehouse= (state=initialState, action)=>{
         case "Delete_succeded":{
             return {
                 ...state, loading:false, warehouse:(state.warehouse.filter((w)=>{return w.id != action.payload.id}))
+            }
+        }
+        case "Commodity_started":{
+            return {...state, loading:true}
+        }
+        case "Commodity_succeded":{
+            return {
+                ...state, loading:false, commodity:action.payload.data, setComm:true
+            }
+        }
+        case "Commodity_fake_add":{
+            return {
+                ...state, commodity:[action.payload, ...state.commodity]
+            }
+        }
+        case "Commodity_failed":{
+            return {
+                ...state, loading:false, setComm:false
             }
         }
         default:{

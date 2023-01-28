@@ -109,11 +109,20 @@ border-radius: 24px;
 .whItem{
     display: flex;
     flex-direction: column;
-    width:20vw;
+    width:16vw;
     background: linear-gradient(214.47deg, #FFFFFF -76.4%, #FFFFFF 212.38%);
     border: 0.8px solid #6C9EE8;
     border-radius: 12px;
     padding-bottom:20px;
+    margin-bottom:16px;
+    margin-right:16px;
+}
+.whCommodityFlex{
+    margin:auto;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left:12vw;
+    margin-top:40px;
 }
 .whItemname{
     font-family: 'Montserrat';
@@ -121,9 +130,58 @@ border-radius: 24px;
     font-weight: 600;
     margin-left:1vw;
     margin-bottom:0;
+    color: black;
+}
+.whTitlename{
+    font-family: 'Montserrat';
+    font-style: italic;
+    font-weight: 600;
+    margin-left:4vw;
+    margin-bottom:0;
+    color: black;
+    text-decoration: underline;
+}
+.whItemname2{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    /* margin-left:1vw; */
+    margin-bottom:0;
+    color:#6C9EE8;
+}
+.alterComm{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-left:19vw;
+    margin-top:20px;
+    margin-bottom:0;
+    color: #252525;
+    opacity:0.8;
 }
 #editWarehouse{
     display: none;
     box-shadow: 0px 100px 80px #d0def3;
     border-radius: 8px;
+}
+
+#newCommodity{
+    display: flex;
+    flex-direction: column;
+    height:430px;
+    display: none;
+}   
+#input12{
+margin-left:5vw;
+}
+#inputNew{
+    margin-left:7vw;
+    height:34px;
+}
+#shipOrder{
+    display: none;
+}
+#inputShip{
+    margin-left:9vw;
 }

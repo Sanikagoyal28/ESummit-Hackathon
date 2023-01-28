@@ -1,0 +1,240 @@
+#admin_head{
+    width: 587px;
+  height: 71px;
+  margin-left: 570px;
+  margin-top: 160px;
+  
+  font-family: 'Kaushan Script';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 50px;
+  line-height: 73px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  
+  color: #6C9EE8;
+  }
+  
+  #admin_img{
+    width: 951px;
+  height: 501px;
+  margin-left: 380px;
+  margin-top: -47px;
+  
+  }
+  
+  #new_card{
+    display: flex;
+    flex-direction: row;
+  
+  }
+  
+  #card1{
+    width: 578px;
+    height: 691px;
+  margin-left: 149px;
+  margin-top: 45px;
+  
+  background: linear-gradient(214.47deg, #FFFFFF -76.4%, #FFFFFF 212.38%);
+  border: 2px solid #6C9EE8;
+  box-shadow: 8px 10px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 15px;
+  
+  display:flex;
+  flex-direction: column;
+  }
+  
+  #ware{
+    position: absolute;
+    width: 395px;
+    height: 40px;
+    left: 220px;
+    top: 798px;
+    
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 37px;
+    display: flex;
+    align-items: center;
+    
+    color: #6C9EE8;
+    
+  }
+  
+  #send{
+    position: absolute;
+    width: 427px;
+    height: 40px;
+    left: 220px;
+    top: 848px;
+    
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 37px;
+    display: flex;
+    align-items: center;
+    
+    color: #6C9EE8;
+    
+  
+  
+  }
+  
+  #send_ware{
+    position: absolute;
+  width: 427px;
+  height: 40px;
+  left: 220px;
+  top: 894px;
+  
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 37px;
+  display: flex;
+  align-items: center;
+  
+  color: #6C9EE8;
+  
+  }
+  
+  #recieve{
+    position: absolute;
+  width: 470px;
+  height: 40px;
+  left: 220px;
+  top: 945px;
+  
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 37px;
+  display: flex;
+  align-items: center;
+  
+  color: #6C9EE8;
+  
+  }
+  
+  #pre_price{
+    position: absolute;
+  width: 370px;
+  height: 40px;
+  left: 220px;
+  top: 997px;
+  
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 37px;
+  display: flex;
+  align-items: center;
+  
+  color: #6C9EE8;
+  
+  }
+  
+  #act_price{
+    position: absolute;
+    width: 218px;
+    height: 40px;
+    left: 220px;
+    top: 1161px;
+    
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 37px;
+    display: flex;
+    align-items: center;
+    
+    color: #6C9EE8;
+    
+    
+    
+  
+  }
+  
+  #inp{
+    box-sizing: border-box;
+  
+  position: absolute;
+  width: 460px;
+  height: 65px;
+  left: 220px;
+  top: 1240px;
+  
+  border: 1px solid #6C9EE8;
+  border-radius: 15px;
+  }
+  
+  #acc_btn{
+    position: absolute;
+  width: 328px;
+  height: 56px;
+  left: 275px;
+  top: 1320px;
+  
+  background: #6C9EE8;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 148px;
+  }
+  
+  #den_btn{
+    position: absolute;
+    width: 328px;
+    height: 56px;
+    left: 275px;
+    top: 1390px;
+    
+    background: #6C9EE8;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 148px;
+  }
+  
+  #comm{
+    position: absolute;
+  width: 287px;
+  height: 40px;
+  left: 220px;
+  top: 1054px;
+  
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 37px;
+  display: flex;
+  align-items: center;
+  
+  color: #6C9EE8;
+  
+  }
+  
+  #quan{
+    position: absolute;
+  width: 287px;
+  height: 40px;
+  left: 220px;
+  top: 1107px;
+  
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 37px;
+  display: flex;
+  align-items: center;
+  
+  color: #6C9EE8;
+  
+  }

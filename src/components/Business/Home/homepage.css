@@ -195,11 +195,28 @@ border-radius: 8px;
     cursor: pointer;
 }
 
-.newWHDone {
+.newWHDone1 {
     width: 200px;
     height: 36px;
     left: 16px;
     top: 317px;
+    border: 1px solid #6C9EE8;
+    border-radius: 8px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    background-color: #6C9EE8;
+    cursor: pointer;
+    color: #FFFFFF;
+    margin-bottom:15px;
+}
+.newWHDone {
+    width: 200px;
+    height: 36px;
+    left: 16px;
+    top: 350px;
     border: 1px solid #6C9EE8;
     border-radius: 8px;
     font-family: 'Montserrat';

@@ -51,6 +51,7 @@ function ToBusiness() {
             <div className="S2B1">
                 <p className="S2CAddress">Enter Business Name</p>
                 <select className="S2CAddInput" placeholder="Businessname" onChange={(e)=>{setBusinessname(e.target.value); sessionStorage.setItem("business name", e.target.value)}}>
+                <option value="">Choose a business</option>
 {business.length>0?business.map((b)=>{
     return <option value={b.name}>{b.name}</option>
 }):null}
