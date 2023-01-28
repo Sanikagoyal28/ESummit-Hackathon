@@ -12,6 +12,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { useNavigate } from 'react-router-dom';
 import { ResetAction } from '../../../redux/actions/authAction';
 import Navbar from '../../Navbar/navbar';
+import session from 'redux-persist/lib/storage/session';
 
 function ResetPwd() {
   const [pass, setPass] = useState("")
@@ -19,6 +20,8 @@ function ResetPwd() {
   const [isPass, setIsPass] = useState(false)
   const [isCPass, setIsCPass] = useState(false)
   const [callApi, setCallApi] = useState(false)
+  const email= sessionStorage.getItem("email")
+  const otp = sessionStorage.getItem("otp")
   const [show1, setShow1] = useState(false)
   function handleShow1() {
     setShow1(!show1)
@@ -64,8 +67,14 @@ function ResetPwd() {
   const { loading, response, error, toHome } = reset;
   const [toastBool, setToastBool] = useState(false)
 
+  const data= {
+    email, 
+    otp, 
+    password:pass
+  }
+
   function RESETPWD() {
-    dispatch(ResetAction(pass))
+    dispatch(ResetAction(data))
   }
 
   useEffect(()=>{

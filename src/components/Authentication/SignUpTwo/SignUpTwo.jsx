@@ -20,6 +20,9 @@ function SignUpTwo() {
   const [checkPass, setCheckPass] = useState(false)
   const [show1, setShow1] = useState(false)
   const [callApi, setCallApi] = useState(false)
+  const [otp, setOtp] = useState("")
+  const email = sessionStorage.getItem("email")
+
   function handleShow1() {
     setShow1(!show1)
   }
@@ -59,9 +62,10 @@ function SignUpTwo() {
   }, [checkName, checkPass])
 
   const data = {
-    name,
-    user_name: nameN,
-    password: pass
+    email,
+    otp:otp,
+    name:nameN,
+    password:pass
   }
  
   const signUp = useSelector((s) => s.AuthReducer)
@@ -100,15 +104,6 @@ useEffect(()=>{
         }
 },[toastBool])
 
-  useEffect(()=>{
-    if(response!==""){
-        toast.success(`${response}`, {
-            position: "top-center",
-            theme: "light",
-            });
-    }
-  },[response])
-
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -125,6 +120,8 @@ useEffect(()=>{
       <p className='authEmail' id="signInput">Business Name</p>
       <input type="text" className="authEmailInput" placeholder="Enter your name" value={nameN} onChange={(e) => setNameN(e.target.value)} />
       <p id="signNameWrong" className="invalidEmail" >Name should consists of alphabet</p>
+      <p className='authEmail'>Enter Otp sent to {email}</p>
+    <input type="text" className="authEmailInput" id="otpInput" placeholder="0  0  0  0  0  0" value={otp} onChange={(e)=>setOtp(e.target.value)}/>
       <img src={lockIcon} id="lockIconS" />
       <p className='authPwd' id="signPwd">Password</p>
       {show1 ? (

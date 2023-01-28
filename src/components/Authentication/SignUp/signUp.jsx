@@ -53,7 +53,7 @@ function SignUp(){
             const [toastBool, setToastBool] = useState(false)
 
             function SIGNUP(){
-                dispatch(SignUpUser(email, callApi),sessionStorage.setItem("signupemail",email), sessionStorage.setItem("NameToBeUsed",name))
+                dispatch(SignUpUser(email),sessionStorage.setItem("email",email))
             }
 
             useEffect(()=>{
@@ -64,16 +64,16 @@ function SignUp(){
                 }
             },[responseApi])
             
-            useEffect(()=>{
-                console.log(toastBool)
-                if(toastBool){
-                        toast.error(`${error}`, {
-                            position: "top-center",
-                            theme: "light",
-                        });
-                        setToastBool(false)
-                    }
-            },[toastBool])
+            // useEffect(()=>{
+            //     console.log(toastBool)
+            //     if(toastBool){
+            //             toast.error(`${error}`, {
+            //                 position: "top-center",
+            //                 theme: "light",
+            //             });
+            //             setToastBool(false)
+            //         }
+            // },[toastBool])
 
     useEffect(()=>{
         if(loading===true){
@@ -85,20 +85,10 @@ function SignUp(){
     },[loading])
 
     const navigate = useNavigate();
-   
-   
-    useEffect(()=>{
-        if(response!==""){
-            toast.success(`${response}`, {
-                position: "top-center",
-                theme: "light",
-                });
-        }
-    },[response])
 
     useEffect(()=>{
         if( toSignOtp){
-            navigate("/verifyemail")
+            navigate("/signuptwo")
         }
     },[ toSignOtp])
   

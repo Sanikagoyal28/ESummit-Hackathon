@@ -57,11 +57,12 @@
 .authEmailInput {
     outline: none;
     border: none;
-   
+   /* margin-left:-2vw; */
 /* margin-top:-50px; */
     width: 26.5vw;
     padding-left: 3vw;
     height: 38px;
+    /* margin-top:70px; */
     background: #EEF1FF;
     border-radius: 12px;
     border: 1px solid rgba(255, 255, 255, 0.2);

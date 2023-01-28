@@ -1,0 +1,60 @@
+.S2CBlock {}
+
+.S2C1 {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 200px;
+    left: 55vw;
+}
+
+.shipImage2 {
+    margin-left: 5vw;
+    width: 600px;
+    height: 500px;
+    margin-top: -40px;
+}
+
+.S2CAddress {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1.1rem;
+    line-height: 37px;
+    color: rgba(0,0,0,0.8);
+    margin-bottom:0;
+}
+.S2CAddInput{
+    width: 380px;
+height: 40px;
+left: 720px;
+top: 320px;
+
+border: 1px solid  rgba(0,0,0,0.8);
+border-radius: 8px;
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 600;
+font-size: 20px;
+line-height: 23px;
+
+color: rgba(0, 0, 0, 0.5);
+}
+.S2CPrice1{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1.1rem;
+    line-height: 37px;
+    color:  rgba(0,0,0,0.8);
+    margin-bottom:0;
+}
+.S2CPrice2{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1.3rem;
+    line-height: 37px;
+    color: #6C9EE8;
+    margin-bottom:0;
+}

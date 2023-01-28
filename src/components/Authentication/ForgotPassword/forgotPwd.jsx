@@ -37,25 +37,6 @@ function ForgotPwd(){
        
     }
 
-    useEffect(()=>{
-        console.log(toastBool, loading)
-        if(error!="" && !loading){
-            console.log(error)
-            setToastBool(true)
-        }
-    },[state])
-
-    useEffect(()=>{
-        console.log(toastBool)
-        if(toastBool){
-                toast.error(`${error}`, {
-                    position: "top-center",
-                    theme: "light",
-                });
-                setToastBool(false)
-            }
-    },[toastBool])
-
 
     useEffect(()=>{
         if(loading===true){
@@ -65,14 +46,6 @@ function ForgotPwd(){
             document.body.style.opacity = 1;
         }
     },[loading])
-    useEffect(()=>{
-        if(response!==""){
-            toast.success(`${response}`, {
-                position: "top-center",
-                theme: "light",
-                });
-        }
-    },[response])
 
     useEffect(()=>{
         if(toOtp){
@@ -85,7 +58,7 @@ return <>
     <div className='loginBg'>
     {/* <img src={arrow} id="arrow" onClick={()=>{navigate("/")}} /> */}
     <p className='authHead' id="authHeadTwo">Forgot Password</p>
-    <p className='authEmail'>We will send you an Otp on example@gmail.com</p>
+    <p className='authEmail'>We will send you an Otp on {email}</p>
     <img src={emailIcon} id="emailIconFgt" />
     <input type="text" className="authEmailInput" placeholder="Enter your email" value={email} onChange={(e)=>{setEmail(e.target.value)}}/>
     <p className='invalidEmail' id="fgtEmail">Invalid Email Address</p>

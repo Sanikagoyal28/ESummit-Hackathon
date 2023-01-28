@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
-import "./login.css";
-import emailIcon from "../../Assets/email.svg";
-import lockIcon from "../../Assets/lock.svg";
+import emailIcon from "../Assets/email.svg";
+import lockIcon from "../Assets/lock.svg";
 // import LogInUser from '../../../react-redux/actions/authAction';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
@@ -11,11 +10,11 @@ import 'react-toastify/dist/ReactToastify.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 import axios from 'axios';
-import Navbar from '../../Navbar/navbar';
-import LogInUser from '../../../redux/actions/authAction';
+import Navbar from '../Navbar/navbar';
+import LogInUser from '../../redux/actions/authAction';
 
 
-function Login() {
+function AdminLogin() {
 
     const dispatch = useDispatch();
 
@@ -54,11 +53,11 @@ function Login() {
         dispatch(LogInUser(data, isAuthEmail)) 
     }
 
-    useEffect(()=>{
-        if(toFgtPwd){
-            navigate("/homepage")
-        }
-    },[toFgtPwd])
+    // useEffect(()=>{
+    //     if(toFgtPwd){
+    //         navigate("/")
+    //     }
+    // },[toFgtPwd])
 
     const isUser = localStorage.getItem("access token") ? true : false;
     console.log(isUser)
@@ -86,9 +85,7 @@ function Login() {
             )}
             <input type={show ? "text" : "password"} className="authPwdInput" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Password" />
             <p className='fgtPwd' onClick={()=>{navigate('/forgot')}}>Forgot Password?</p>
-            <button className='authSignIn' id="loginButton" onClick={() => {LOGIN()}}>Sign In</button>
-            <hr id="hrOr" />
-            <p className='createAcc'>New to Shuttle? <span className="authSignUp" onClick={()=>{navigate("/signup")}}>Create Account</span></p>
+            <button className='authSignIn' id="loginButton" style={{marginBottom:"50px"}} onClick={() => {LOGIN()}}>Sign In</button>
         </div>
         {/* {(loading === true) ? <Spinner animation="border" variant="light" id="loadSpinner" /> : null} */}
         <ToastContainer />
@@ -96,4 +93,4 @@ function Login() {
     </>
 }
 
-export default Login;
+export default AdminLogin;

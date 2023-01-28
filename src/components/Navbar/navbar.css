@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Montserrat:wght@200&display=swap');
+body{
+    margin:0;
+    padding:0;
+    background-color: #EEF1FF;
+}
 .navbarH{
     width:100vw;
     position: fixed;
@@ -6,6 +12,7 @@
     background-color: #6c9ee8;
     padding:0;
     height:56px;
+    z-index:999;
 }
 
 .titleH{
@@ -19,17 +26,44 @@ margin-top: 0;
 margin-left:2vw;
 color: rgba(255, 255, 255, 0.9);
 }
-.loginH{
+.navbarName3{
     float: right;
     margin:0;
-    background: none;
-    outline: none;
-    border: none;
     font-family: 'Montserrat';
 font-style: normal;
 font-weight: 900;
 font-size: 1.1rem;
     color: rgba(255, 255, 255, 0.9);
+    margin-top:-65px;
+    margin-right:24vw;
+    cursor: pointer;
+}
+.navbarName1{
+    float: right;
+    margin:0;
+    font-family: 'Montserrat';
+font-style: normal;
+font-weight: 900;
+font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-top:-65px;
+    margin-right:13vw;
+    cursor: pointer;
+}
+.navbarName2{
+    float: right;
+    margin:0;
+    font-family: 'Montserrat';
+font-style: normal;
+font-weight: 900;
+font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-top:-65px;
+    margin-right:5vw;
+    cursor: pointer;
+}
+.navbarProfile{
+    float:right;
     margin-top:-65px;
     margin-right:1.5vw;
     cursor: pointer;

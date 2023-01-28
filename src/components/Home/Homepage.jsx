@@ -1,33 +1,25 @@
 import React from "react";
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
+import logo from "../Assets/logo.svg"
 import "./homepage.css"
 import Navbar from "../Navbar/navbar";
+import { useNavigate } from "react-router-dom";
 
-function Homepage (){
+function Landingpage (){
+  const navigate = useNavigate();
     return <>
   <Navbar />
-    <div className="HOME">
-    {/* <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static" color="primary"> 
-        <Toolbar>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            Shutter
-          </Typography>
-          <Button color="inherit">Login</Button>
-        </Toolbar>
-      </AppBar>
-    </Box> */}
-    <div className="navbarH">
-        <p className="titleH">Shuttle</p>
-        {/* <button className="loginH">Login</button> */}
+   <div>
+   <p id="discription">Welcome to <span id="shuttle">Shuttle</span>, get your journey started here!</p>
+       <button className="text1" onClick={()=>{
+        navigate("/login")
+       }}>Enter as Business</button>
+       <button className="text2">Enter as Customer</button>
+       <button className="text3" onClick={()=>{
+        navigate("/adminlogin")
+       }}>Enter as Admin</button>
+       <img src={logo} id="logo_img"/>
     </div>
-    </div>
-
     </>
 }
 
-export default Homepage
+export default Landingpage

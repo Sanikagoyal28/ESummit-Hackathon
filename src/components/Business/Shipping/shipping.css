@@ -1,0 +1,61 @@
+.shippingBlock{
+
+}
+.shippingHead{
+    display: block;
+    font-family: 'sans-serif';
+font-style: normal;
+font-weight: 400;
+font-size: 1.9rem;
+line-height: 73px;
+text-align: center;
+color: #6C9EE8;
+margin-top:80px;
+}
+.shipImage{
+margin-left: 7vw;
+width:600px;
+height:500px;
+margin-top:-40px;
+}
+.shipping1{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1rem;
+    line-height: 37px;
+    outline: none;
+    color: #fff;;
+    width: 350px;
+height: 56px;
+position:absolute;
+left: 750px;
+top: 260px;
+background: #6C9EE8;
+/* background: */
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 32px;
+border:1px solid  #6C9EE8;
+    
+}
+.shipping2{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1rem;
+    line-height: 37px;
+    outline: none;
+    border: none;
+    color: #FFFFFF;
+    width: 350px;
+    height: 56px;
+    position:absolute;
+    left: 750px;
+    top: 360px;
+    
+
+background: #6C9EE8;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 32px;
+    
+}

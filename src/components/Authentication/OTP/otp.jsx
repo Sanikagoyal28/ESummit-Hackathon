@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import "./otp.css";
 import { useDispatch, useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
-import { OtpAction } from '../../../redux/actions/authAction';
+import { FgtPwdAction, OtpAction } from '../../../redux/actions/authAction';
 import { Spinner } from 'react-bootstrap';
 // import arrow from "../../Assets/arrow-back.svg";
 import 'react-toastify/dist/ReactToastify.css';
@@ -54,6 +54,7 @@ function AuthOtp() {
     }, [response])
 
     function OTP() {
+        sessionStorage.setItem("otp", otp)
         dispatch(OtpAction(data, navigate))
     }
 
@@ -65,25 +66,25 @@ function AuthOtp() {
         }
     }, [otpR])
 
-    useEffect(() => {
-        console.log(toastBool)
-        if (toastBool) {
-            toast.error(`${error}`, {
-                position: "top-center",
-                theme: "light",
-            });
-            setToastBool(false)
-        }
-    }, [toastBool])
+    // useEffect(() => {
+    //     console.log(toastBool)
+    //     if (toastBool) {
+    //         toast.error(`${error}`, {
+    //             position: "top-center",
+    //             theme: "light",
+    //         });
+    //         setToastBool(false)
+    //     }
+    // }, [toastBool])
 
-    useEffect(() => {
-        if (loading === true) {
-            document.body.style.opacity = 0.5;
-        }
-        else {
-            document.body.style.opacity = 1;
-        }
-    }, [loading])
+    // useEffect(() => {
+    //     if (loading === true) {
+    //         document.body.style.opacity = 0.5;
+    //     }
+    //     else {
+    //         document.body.style.opacity = 1;
+    //     }
+    // }, [loading])
 
     useEffect(() => {
         if (toRstPwd) {
@@ -96,9 +97,9 @@ function AuthOtp() {
             {/* <img src={arrow} id="arrow" onClick={() => { navigate("/fgtpwd") }} /> */}
             <p className='authHead' id="authHeadTwo">Otp Verification</p>
             <p className='authEmail'>Enter Otp sent to {email}</p>
-            <input type="text" className="authEmailInput" id="otpInput" placeholder="0  0  0  0  0  0" value={otp} onChange={(e) => setOtp(e.target.value)} />
+            <input type="text" className="authEmailInput" id="otpInput" placeholder="0  0  0  0" value={otp} onChange={(e) => setOtp(e.target.value)} />
             <p className='invalidEmail'>Incorrect Otp</p>
-            <p className='resendFgtOtp' disabled={seconds !== 0 ? true : false} onClick={() => { dispatch(ResendOtpAction(email), setSeconds(59)) }}>Resend Otp</p>
+            <p className='resendFgtOtp' disabled={seconds !== 0 ? true : false} onClick={() => {dispatch(FgtPwdAction(email, true), setSeconds(59))}}>Resend Otp</p>
             <span id="timer">00:{seconds}</span>
             <button className='authFgtPwdBtn' onClick={() => { OTP() }}>Continue</button>
         </div>

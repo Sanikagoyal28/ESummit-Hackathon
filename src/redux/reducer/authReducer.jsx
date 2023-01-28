@@ -16,17 +16,17 @@ const initialState ={
  const AuthReducer =(state=initialState, action)=>{
     switch(action.type){
         case "REQUEST_STARTED":{
-            localStorage.setItem("isToken", "false")
             return {
                 ...state, loading:true, toFgtPwd:false
             }
         }
         case "REQUEST_SUCCEDED":{
             console.log(action.payload)
-            localStorage.setItem("access token", action.payload.token)
+            localStorage.setItem("access token", action.payload.access)
+            sessionStorage.setItem("name", action.payload.name)
             return {...state,
                 loading:false,
-                response:action.payload.msg,
+                response:action.payload.message[0],
                 user:action.payload.user,
                 error:"",
                 toFgtPwd:true,
@@ -53,7 +53,7 @@ const initialState ={
             console.log(action.payload)
             return {...state,
                 loading:false,
-                response:action.payload.msg,
+                response:action.payload.message[0],
                 error:"",
                 toOtp:true
             }
@@ -79,7 +79,7 @@ const initialState ={
             localStorage.setItem("isToken", "true")
             return {...state,
                 loading:false,
-                response:action.payload.msg,
+                response:action.payload.message[0],
                 error:"",
                 toRstPwd:true,
                 token:true,
@@ -105,7 +105,7 @@ const initialState ={
             console.log(action.payload)
             return {...state,
                 loading:false,
-                response:action.payload.msg,
+                response:action.payload.message[0],
                 error:"",
                 toHome:true
             }
@@ -130,7 +130,8 @@ const initialState ={
             console.log(action.payload)
             return {...state,
                 loading:false,
-                response:action.payload.msg,
+                toHome:true,
+                // response:action.payload.message[0],
                 error:""
             }
         }
@@ -140,7 +141,8 @@ const initialState ={
             return {
                 loading:false,
                 response:"",
-                error:action.payload.response.data.msg
+                toHome:false,
+                error:action.payload.response.data.message[0]
             }
         }
         case "SIGNUP_STARTED":{
@@ -154,7 +156,7 @@ const initialState ={
             console.log(action.payload)
             return {...state,
                 loading:false,
-                response:action.payload.msg,
+                response:action.payload.message[0],
                 error:"",
                 toSignOtp:true
             }
@@ -177,11 +179,11 @@ const initialState ={
         }
         case "EMAIL_VERIFY_SUCCEDED":{
             console.log(action.payload)
-            localStorage.setItem("access token", action.payload.token)
+            // localStorage.setItem("access token", action.payload.token)
             console.log(action.payload.token)
             return {...state,
                 loading:false,
-                response:action.payload.msg,
+                response:action.payload.message[0],
                 error:"",
                 toSignUpTwo:true,
                 token:true,
@@ -206,10 +208,12 @@ const initialState ={
         }
         case "SIGNUP_TWO_SUCCEDED":{
             console.log(action.payload)
+            localStorage.setItem("access token", action.payload.access)
+            sessionStorage.setItem("name", action.payload.name)
             // sessionStorage.setItem("access token", action.payload.token)
             return {...state,
                 loading:false,
-                response:action.payload.msg,
+                response:action.payload.message[0],
                 error:"",
                 toHome:true,
                 user:action.payload.user,

@@ -1,0 +1,55 @@
+ #img {
+    position: absolute;
+    width: 45.5vw;
+    height: 68.75vh;
+    left: 1.94vw;
+    top: 28.61vh;
+  }
+  
+  #card {
+    position: absolute;
+    width: 33vw;
+    height: 65vh;
+    left: 55vw;
+    top: 23vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background: linear-gradient(214.47deg, #ffffff -76.4%, #ffffff 212.38%);
+    border: 2px solid #6c9ee8;
+    box-shadow: 8px 10px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+  }
+  
+.cust1 {
+  
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: #6c9ee8;
+    margin-left:2vw;
+  }
+  
+.custInput {
+    box-sizing: border-box;
+    padding: 20px;
+    width: 390px;
+    height: 40px;
+    border: 1px solid #6c9ee8;
+    border-radius: 12px;
+    margin-left:2vw;
+  }
+.custText {
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.1rem;
+    line-height: 30px;
+    color: black;
+    margin-left:2vw;
+    height: 37px;
+    margin-bottom:0;
+  }
+  
+ 

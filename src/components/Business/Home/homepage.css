@@ -1,0 +1,238 @@
+.BusTitle {
+    display: block;
+    font-family: 'sans-serif';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.8rem;
+    line-height: 73px;
+    text-align: center;
+    color: #6C9EE8;
+    margin-top: 80px;
+}
+
+#shuttle {
+    font-family: 'Kaushan Script';
+}
+
+.BusCreateWH {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.1rem;
+    line-height: 37px;
+    color: black;
+    margin-top: -48px;
+    margin-left: 78vw;
+}
+
+#createWH {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1.1rem;
+    line-height: 37px;
+    text-decoration: underline;
+    cursor: pointer;
+    color: #6C9EE8;
+}
+
+.BusWHImage {
+    width: 600px;
+    margin-left: 25vw;
+    margin-top: 10px;
+}
+.BusWHFlexbox{
+    margin:auto;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left:12vw;
+    margin-top:20px;
+}
+.warehouse {
+    display: flex;
+    padding: 12px;
+    background: linear-gradient(214.47deg, #6C9EE8 -76.4%, #6C9EE8 212.38%);
+    box-shadow: 10px 10px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+    /* height:fi */
+    width: 22vw;
+    cursor: pointer;
+    margin-bottom:20px;
+    margin-right:20px;
+}
+
+.wh1 {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.whLocation {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: white;
+    margin-bottom: 0;
+    margin-top: 20px;
+}
+
+.whMaxQuant {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: white;
+    margin-bottom: 20px;
+    width: 15vw;
+}
+
+.whCurQuant {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: white;
+    margin-bottom: 0;
+    width: 15vw;
+}
+
+.deleteIcon {
+    width: 24px;
+    height: 24px;
+    margin-left: 5vw;
+    cursor: pointer;
+}
+
+.editIcon {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+
+#newWarehouse {
+    display: none;
+    box-shadow: 0px 100px 80px #d0def3;
+border-radius: 8px;
+}
+
+.newWHDiv {
+    position: absolute;
+    width: 800px;
+    height: 387px;
+    left: 300px;
+    top: 110px;
+    padding-left: 1vw;
+    padding-top: 10px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    /* background-color: #252525; */
+
+}
+
+.newWHTitle {
+    width: 785px;
+    height: 36px;
+    /* left: 10px; */
+    /* top: 8px; */
+    background: #6C9EE8;
+    border-radius: 8px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    color: #FFFFFF;
+    padding-top: 12px;
+    text-align: center;
+    margin-bottom: 15px;
+
+}
+
+.newWHLocation {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.newWHLocInput {
+    width: 200px;
+    height: 30px;
+    margin-top: 10px;
+    margin-left: 2vw;
+    /* left: 71px; */
+    /* top: 67px; */
+
+    background: #FFFFFF;
+    border: 1px solid #D9D9D9;
+    border-radius: 8px;
+    padding-left: 0.5vw;
+}
+
+.newWHQuantity {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.newWHCancel {
+    width: 200px;
+    height: 36px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    color: #000000;
+    border: 1px solid #D9D9D9;
+    border-radius: 8px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.newWHDone {
+    width: 200px;
+    height: 36px;
+    left: 16px;
+    top: 317px;
+    border: 1px solid #6C9EE8;
+    border-radius: 8px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    background-color: #6C9EE8;
+    cursor: pointer;
+    color: #FFFFFF;
+}
+.newWH1 {
+    display: flex;
+}
+.newWH2 {
+    display: flex;
+}
+.newWH3 {
+    display: flex;
+}
+.newWHImage {
+    width: 300px;
+    height: 200px;
+    position: absolute;
+    left: 33vw;
+    top: 120px;
+}
+#input1{
+    margin-left:8vw;
+}
+#input2{
+    margin-left:12vw;
+}
+#input3{
+    margin-left:4.2vw;
+}
