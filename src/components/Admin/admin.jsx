@@ -1,33 +1,42 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './admin.css'
 
 // import logo3 from '../Images/logo3.svg'
 import Navbar from '../Navbar/navbar'
-
+import BaseUrl from '../../redux/actions/BaseUrl'
+import Cart from './cart'
 
 const AdminPage = () => {
+
+const [adminInfo, setAdminInfo] = useState([])
+const accesstoken = localStorage.getItem("access token")
+const config = {
+    headers: {
+        Authorization: `Bearer ${accesstoken}`
+    }
+}
+    useEffect(()=>{
+        BaseUrl.get("/warehouse/shipment/", config).
+        then((res)=>{
+            console.log(res)
+            setAdminInfo(res.data)
+        })
+        .catch((err)=>{
+            console.log(err)
+        })
+        },[])
+
   return (
     <div>
        <Navbar />
        <p id="admin_head">Welcome to the admin page!</p> 
   {/* <img src={logo3} id="admin_img"/> */}
-  <div id="new_card">
-     <div id="card1"> 
-        <p id="ware">Sender's Name:India</p>
-        <p id="send">Sender's Warehouse: Amazon</p>
-        <p id="send_ware">Reciever's Name: India</p>
-        <p id="recieve">Reciever's Warehouse: Amazon</p>
-        <p id="pre_price">Predicted Price: Rs. 300</p>
-        <p id="comm">Commodity:Amazon</p>
-        <p id="quan">Quantity: 200</p>
-         <p id="act_price">Actual Price:</p>
-        <input placeholder="Enter actual price" id="inp"/>
-        
-        <button id="acc_btn">Accept</button>
-        <button id="den_btn">Deny</button>  
-     </div>
-    
+  <div className='amdinFlexbox'>
+    {adminInfo.length>0? adminInfo.map((a)=>{
+<Cart commodity={a.commodity} customer={a.customer} price={a.predicted_price} quantity={a.quantity} userid={a.uuid} sender={a.sender} status={a.status} />
+    }):null}
   </div>
+ 
     </div>
   )
 }

@@ -50,6 +50,17 @@ function handleShipping(){
                 position: "top-center",
                 theme: "light",
             })
+            toast.info(`ShipmentID:${res.data.uuid}
+            Predicted Price:${res.data.predicted_price}`, {
+                position: "bottom-right",
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+                });
         }
     })
     .catch((err)=>{

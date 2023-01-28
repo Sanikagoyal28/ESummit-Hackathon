@@ -31,7 +31,7 @@
   }
   
   #card1{
-    width: 578px;
+    width: 450px;
     height: 691px;
   margin-left: 149px;
   margin-top: 45px;
@@ -45,17 +45,13 @@
   flex-direction: column;
   }
   
-  #ware{
-    position: absolute;
-    width: 395px;
-    height: 40px;
-    left: 220px;
-    top: 798px;
+  .ware{
+  
     
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 700;
-    font-size: 30px;
+    font-size: 1.2rem;
     line-height: 37px;
     display: flex;
     align-items: center;
