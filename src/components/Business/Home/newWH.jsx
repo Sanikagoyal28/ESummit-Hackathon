@@ -41,7 +41,7 @@ const config = {
 const data = {
     location,
     volume:volume,
-    business:1
+    business:3
 }
 const data2 = {
     location,
@@ -84,10 +84,10 @@ function handlePost (){
                 <p className="newWHQuantity">Volume</p>
                 <input type="text" className="newWHLocInput" id="input2" value={volume} onChange={(e)=>setVolume(e.target.value)} placeholder="Set volume" />
             </div>
-            <div className="newWH2">
+            {/* <div className="newWH2">
                 <p className="newWHQuantity">Maximum Quantity</p>
                 <input type="text" className="newWHLocInput" id="input3" value={quantity} onChange={(e)=> setQuantity(e.target.value)} placeholder="Set maximum volume" />
-            </div>
+            </div> */}
                 <button className="newWHCancel" onClick={handleCancel}>Cancel</button>
                 <button className="newWHDone" onClick={handlePost}>Done</button>
                 <img src={newwarehouse} className="newWHImage"  />

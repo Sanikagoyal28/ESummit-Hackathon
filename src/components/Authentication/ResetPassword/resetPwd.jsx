@@ -13,6 +13,7 @@ import { useNavigate } from 'react-router-dom';
 import { ResetAction } from '../../../redux/actions/authAction';
 import Navbar from '../../Navbar/navbar';
 import session from 'redux-persist/lib/storage/session';
+import LoginNavbar from '../../loginNavbar/loginNav';
 
 function ResetPwd() {
   const [pass, setPass] = useState("")
@@ -122,7 +123,7 @@ useEffect(()=>{
   }, [toHome])
 
   return <>
-  <Navbar />
+  <LoginNavbar />
     <div className='loginBg'>
       {/* <img src={arrow} id="arrow" onClick={() => { navigate("/otp") }} /> */}
       <p className='authHead'id="authHeadTwo">Reset Password</p>

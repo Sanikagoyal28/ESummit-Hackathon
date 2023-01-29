@@ -25,12 +25,10 @@ function Commodity() {
         // BaseUrl.get(`/warehouse/list_warehouses/?business= ${nandan}`, config)
         BaseUrl.get('/warehouse/category/', config)
             .then((res) => {
-                console.log(res)
-                console.log(res.data)
                 setCategory(res.data)
             })
             .catch((err) => {
-                console.log(err)
+               
             })
     }, [])
     const [country, setCountry] = useState([])
@@ -43,13 +41,11 @@ function Commodity() {
     useEffect(() => {
         BaseUrl.get(`/warehouse/countrylist/`)
             .then((res) => {
-                console.log(res)
-                console.log(res.data)
                 setCountry(res.data)
                 setBool(true)
             })
             .catch((err) => {
-                console.log(err)
+              
             })
     }, [])
 
@@ -59,11 +55,11 @@ function Commodity() {
     }
 
     const data = {
-        category:catName,
+        category: catName,
         name,
         volume: volume,
         quantity,
-        warehouse:id
+        warehouse: id
     }
     console.log(data)
     const dispatch = useDispatch();
@@ -83,13 +79,12 @@ function Commodity() {
             })
             .catch((err) => {
                 console.log(err)
-            })  
+            })
     }
 
     const [commodityList, setCommodityList] = useState([])
-    console.log(id)
     const [waredata, setWaredata] = useState({})
-    
+
     // useEffect(()=>{
     //     // BaseUrl.get(`/warehouse/list_warehouses/?business= ${nandan}`, config)
     //     BaseUrl.get(`/warehouse/warehouseRUD/${id}`, config)
@@ -119,10 +114,19 @@ function Commodity() {
             <div className="newWHTitle">Add new Commodity</div>
             <div className="newWH1" >
                 <p className="newWHLocation">Commodity Name</p>
-                <input type="text" className="newWHLocInput" value={name} onChange={(e)=>setName(e.target.value)} id="input12" placeholder="Enter commodity name" />
+                <input type="text" className="newWHLocInput" value={name} onChange={(e) => setName(e.target.value)} id="input12" placeholder="Enter commodity name" />
             </div>
             <div className="newWH1">
                 <p className="newWHLocation">Category Name</p>
+                {/* <input type="text" list="categories" className="newWHLocInput" id="inputNew" />
+                <datalist id="categories" onChange={(e) => { setCatName(e.target.dataset.value) }}>
+                    <option>Choose Option</option>
+                    {category.length > 0 ? category.map((c) => {
+                        console.log(c);
+                        return <option data-value={c.id} value={c.name}></option>
+                    }) : null}
+                </datalist> */}
+
                 <select name="countryCode" id="inputNew" className="newWHLocInput" onChange={(e) =>{ setCatName(e.target.value)
                     sessionStorage.setItem("commodityId", e.target.value)}}>
                 <option>Choose Option</option>

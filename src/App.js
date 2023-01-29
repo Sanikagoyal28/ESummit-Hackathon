@@ -41,6 +41,7 @@ function App() {
     {isUser?<Route path="/warehouse/:id" exact element={<WareHouse />} />:null}
     {isUser?<Route path="/admin" exact element={<AdminPage /> } />:null}
     {isUser?<Route path="/customer" exact element={<Customer /> } />:null}
+    <Route path="/admin" exact element={<AdminPage /> } />
     
     </Routes>
   </BrowserRouter>

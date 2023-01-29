@@ -11,6 +11,7 @@ import { ResendOtpAction } from '../../../redux/actions/authAction';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Navbar from '../../Navbar/navbar';
+import LoginNavbar from '../../loginNavbar/loginNav';
 
 function AuthOtp() {
 
@@ -92,7 +93,7 @@ function AuthOtp() {
         }
     }, [toRstPwd])
     return <>
-    <Navbar />
+    <LoginNavbar />
         <div className='loginBg'>
             {/* <img src={arrow} id="arrow" onClick={() => { navigate("/fgtpwd") }} /> */}
             <p className='authHead' id="authHeadTwo">Otp Verification</p>

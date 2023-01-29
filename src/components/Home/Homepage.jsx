@@ -13,9 +13,11 @@ function Landingpage (){
        <button className="text1" onClick={()=>{
         navigate("/login")
        }}>Enter as Business</button>
-       <button className="text2">Enter as Customer</button>
+       <button className="text2" onClick={()=>{
+        navigate("/customer")
+       }}>Enter as Customer</button>
        <button className="text3" onClick={()=>{
-        navigate("/adminlogin")
+        navigate("/admin")
        }}>Enter as Admin</button>
        <img src={logo} id="logo_img"/>
     </div>

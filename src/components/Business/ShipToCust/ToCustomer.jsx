@@ -45,15 +45,15 @@ function handleShipping(){
     .then((res)=>{
         console.log(res)
         if(res.status === 201){
-          
             toast.success("Shipment placed", {
                 position: "top-center",
                 theme: "light",
             })
-            toast.info(`ShipmentID:${res.data.uuid}
+            toast.info(`Shipping status: ${res.data.status}
+            ShipmentID:${res.data.uuid}
             Predicted Price:${res.data.predicted_price}`, {
                 position: "bottom-right",
-                autoClose: 3000,
+                autoClose: 30000,
                 hideProgressBar: false,
                 closeOnClick: true,
                 pauseOnHover: true,
@@ -80,7 +80,7 @@ function handleShipping(){
                     return <option value={c}>{c}</option>
                 }):null}
 </select>
-                <p className="S2CPrice1">Shipping Status</p>
+                {/* <p className="S2CPrice1">Shipping Status</p> */}
                 <button className="shippingCust" onClick={()=>{handleShipping()}}>Shipped to Customer</button>
             </div>
         </div>

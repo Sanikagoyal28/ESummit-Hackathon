@@ -58,15 +58,15 @@ function ToBusiness() {
             .then((res) => {
                 console.log(res)
                 if (res.status === 201) {
-
                     toast.success("Shipment placed", {
                         position: "top-center",
                         theme: "light",
                     })
-                    toast.info(`ShipmentID:${res.data.uuid}
-                    Predicted Price:${res.data.predicted_price}`, {
+                    toast.info(`Shipping status: ${res.data.status}
+                    ShipmentID: ${res.data.uuid}
+                    Predicted Price: ${res.data.predicted_price}`, {
                         position: "bottom-right",
-                        autoClose: 3000,
+                        autoClose: 30000,
                         hideProgressBar: false,
                         closeOnClick: true,
                         pauseOnHover: true,
@@ -88,23 +88,23 @@ function ToBusiness() {
             <img src={shipImage} className="shipImage2" />
             <div className="S2B1">
                 <p className="S2CAddress">Enter Business Name</p>
-                <select className="S2CAddInput" placeholder="Businessname" onClick={handleWarehouse} onChange={(e) => { setBusinessname(e.target.value); sessionStorage.setItem("business name", e.target.value) }}>
-                    <option value="">Choose a business</option>
+                <select className="S2CAddInput options" placeholder="Businessname" onClick={handleWarehouse} onChange={(e) => { setBusinessname(e.target.value); sessionStorage.setItem("business name", e.target.value) }}>
+                    <option value="" className="options">Choose a business</option>
                     {business.length > 0 ? business.map((b) => {
-                        return <option value={b.name}>{b.name}</option>
+                        return <option className="options" value={b.name}>{b.name}</option>
                     }) : null}
                 </select>
                 {/* <input type="text" className="S2CAddInput" placeholder="Businessname" /> */}
                 <p className="S2CAddress">Select a Warehouse</p>
-                <select className="S2CAddInput" onChange={(e) => { setWarehousename(e.target.value) }}>
-                    <option value="">Choose a Warehouse</option>
+                <select className="S2CAddInput options" onChange={(e) => { setWarehousename(e.target.value) }}>
+                    <option value="" className="options">Choose a Warehouse</option>
                     {warehouse.length > 0 ? warehouse.map((b) => {
-                        return <option value={b.id}>{b.location}</option>
+                        return <option className="options" value={b.id}>{b.location}</option>
                     }) : null}
                 </select>
                 {/* <input type="text" className="S2CAddInput" placeholder="select a warehouse" /> */}
-                <p className="S2CPrice1">Shipping status: </p>
-                <button className="shippingCust" onClick={() => { handleShipping2() }}>Shipped to Business</button>
+                {/* <p className="S2CPrice1">Shipping status: </p> */}
+                <button className="shippingCust" id="shipbutton" onClick={() => { handleShipping2() }}>Shipped to Business</button>
             </div>
         </div>
     </>

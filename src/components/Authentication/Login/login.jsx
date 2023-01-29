@@ -13,6 +13,7 @@ import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 import axios from 'axios';
 import Navbar from '../../Navbar/navbar';
 import LogInUser from '../../../redux/actions/authAction';
+import LoginNavbar from '../../loginNavbar/loginNav';
 
 
 function Login() {
@@ -66,9 +67,17 @@ function Login() {
     //     if(isUser)
     //     navigate("/")
     // },[isUser])
+    useEffect(()=>{
+        if(loading===true){
+            document.body.style.opacity = 0.5;
+        }
+        else{
+            document.body.style.opacity = 1;
+        }
+    },[loading])
 
     return <>
-    <Navbar />
+    <LoginNavbar />
     <div className='AUTHENTICATION'>
        
         <div className='loginBg'>
@@ -90,7 +99,7 @@ function Login() {
             <hr id="hrOr" />
             <p className='createAcc'>New to Shuttle? <span className="authSignUp" onClick={()=>{navigate("/signup")}}>Create Account</span></p>
         </div>
-        {/* {(loading === true) ? <Spinner animation="border" variant="light" id="loadSpinner" /> : null} */}
+        {(loading === true) ? <Spinner animation="border" variant="light" id="loadSpinner" /> : null}
         <ToastContainer />
         </div>
     </>

@@ -26,15 +26,16 @@ const config = {
         })
         },[])
 
+        console.log(adminInfo);
   return (
     <div>
        <Navbar />
        <p id="admin_head">Welcome to the admin page!</p> 
   {/* <img src={logo3} id="admin_img"/> */}
-  <div className='amdinFlexbox'>
-    {adminInfo.length>0? adminInfo.map((a)=>{
-<Cart commodity={a.commodity} customer={a.customer} price={a.predicted_price} quantity={a.quantity} userid={a.uuid} sender={a.sender} status={a.status} />
-    }):null}
+  <div className='adminFlexbox'>
+    {adminInfo.map((a)=>{
+ return <Cart commodity={a.commodity} customer={a.customer} price={a.predicted_price} quantity={a.quantity} userid={a.uuid} sender={a.sender} status={a.status} />
+    })}
   </div>
  
     </div>

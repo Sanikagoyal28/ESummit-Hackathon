@@ -9,6 +9,7 @@ import { useNavigate } from 'react-router-dom';
 import emailIcon from "../../Assets/email.svg";
 import lockIcon from "../../Assets/lock.svg";
 import Navbar from '../../Navbar/navbar';
+import LoginNavbar from '../../loginNavbar/loginNav';
 // import arrow from "../../Assets/arrow-back.svg";
 
 function SignUp(){
@@ -93,7 +94,7 @@ function SignUp(){
     },[ toSignOtp])
   
 return <>
-<Navbar />
+<LoginNavbar />
 <div className='loginBg'>
     {/* <img src={arrow} id="arrow" onClick={()=>{navigate("/")}}/> */}
     <p className='authHead' id="authHeadTwo">Sign Up</p>

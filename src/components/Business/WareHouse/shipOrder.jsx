@@ -31,20 +31,29 @@ const config = {
 
 const dispatch = useDispatch()
 const ware = useSelector((w)=>w.Warehouse)
-console.log(ware)
+
 const {setWare, warehouse, setComm, commodity} = ware;
 const navigate = useNavigate();
 const [commodityL, setCommodityL] = useState({})
-useEffect(()=>{
+const [commodityQuant, setCommodityQuant] = useState("")
+
+function handleCommodityQuant(){
     dispatch(CommodityFeed(id))
-},[])
-useEffect(()=>{
     if(setComm){
+     
+        commodity.filter((c)=>{
+            if(c.name === comm){
+                console.log(c.quantity)
+                setCommodityQuant(c.quantity)
+                return c.name
+            }
+        })
         setCommodityL(commodity)
     }
-},[setComm, commodity])
+}
+
 function PlaceOrderCust (){
-    console.log(comm)
+   
     sessionStorage.setItem("sender", id)
     sessionStorage.setItem("commodity", comm)
     sessionStorage.setItem("quantity", quantity)
@@ -64,10 +73,10 @@ function PlaceOrderRecie(){
             <div className="newWHTitle">Ship an order</div>
             <div className="newWH1" >
                 <p className="newWHLocation">Add Commodity</p>
-                <select name="countryCode" id="inputNew" className="newWHLocInput" value={comm} onChange={(e) =>{console.warn(e.target.value) ;setCom(e.target.value)}}>
+                <select name="countryCode" id="inputNew" className="newWHLocInput"  onClick={()=>{handleCommodityQuant()}}  value={comm} onChange={(e) =>{console.warn(e.target.value) ;setCom(e.target.value)}}>
                 <option value="">Choose option</option>
                     {commodityL.length > 0 ? commodityL.map((c) => {
-                        console.log(c)
+                      
                         return <>
                             <option value={c.name}>{c.name}</option>
                 </>
@@ -76,7 +85,7 @@ function PlaceOrderRecie(){
             </div>
             <div className="newWH2">
                 <p className="newWHQuantity">Add Quantity</p>
-                <input type="text" className="newWHLocInput" id="inputShip" value={quantity} onChange={(e)=> setQuantity(e.target.value)} placeholder="enter quantity" />
+                <input type="text" className="newWHLocInput" id="inputShip" value={quantity} onChange={(e)=> setQuantity(e.target.value)} placeholder={`Maximum quantity: ${commodityQuant}`} />
             </div>
             {/* <button className="newWHCancel">Customer</button> */}
                 {/* <button className="newWHDone">Done</button> */}

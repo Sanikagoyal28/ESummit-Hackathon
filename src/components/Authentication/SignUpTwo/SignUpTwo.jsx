@@ -12,6 +12,7 @@ import { SignUpTwoUser } from "../../../redux/actions/authAction";
 import { Spinner } from 'react-bootstrap';
 import { useNavigate } from "react-router-dom";
 import Navbar from "../../Navbar/navbar";
+import LoginNavbar from "../../loginNavbar/loginNav";
 
 function SignUpTwo() {
   const [nameN, setNameN] = useState("")
@@ -69,7 +70,7 @@ function SignUpTwo() {
   }
  
   const signUp = useSelector((s) => s.AuthReducer)
-  const { loading, error, response, toHome } = signUp;
+  const { loading, error, response, toHome2 } = signUp;
   const [toastBool, setToastBool] = useState(false)
 
   const dispatch = useDispatch();
@@ -85,35 +86,35 @@ function SignUpTwo() {
   function SIGNUPTWO() {
     dispatch(SignUpTwoUser(data))
   }
-  useEffect(()=>{
-    console.log(toastBool, loading)
-    if(error!="" && !loading){
-        console.log(error)
-        setToastBool(true)
-    }
-},[signUp])
+//   useEffect(()=>{
+//     console.log(toastBool, loading)
+//     if(error!="" && !loading){
+//         console.log(error)
+//         setToastBool(true)
+//     }
+// },[signUp])
 
-useEffect(()=>{
-    console.log(toastBool)
-    if(toastBool){
-            toast.error(`${error}`, {
-                position: "top-center",
-                theme: "light",
-            });
-            setToastBool(false)
-        }
-},[toastBool])
+// useEffect(()=>{
+//     console.log(toastBool)
+//     if(toastBool){
+//             toast.error(`${error}`, {
+//                 position: "top-center",
+//                 theme: "light",
+//             });
+//             setToastBool(false)
+//         }
+// },[toastBool])
 
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (toHome) {
+    if (toHome2) {
       navigate("/homepage")
     }
-  }, [toHome])
+  }, [toHome2])
 
   return <>
-  <Navbar />
+  <LoginNavbar />
     <div className='loginBg'>
       {/* <img src={arrow} id="arrow" onClick={() => { navigate("/verifyemail") }} /> */}
       <p className='authHead' id="authHeadTwo">Sign Up</p>
@@ -121,7 +122,7 @@ useEffect(()=>{
       <input type="text" className="authEmailInput" placeholder="Enter your name" value={nameN} onChange={(e) => setNameN(e.target.value)} />
       <p id="signNameWrong" className="invalidEmail" >Name should consists of alphabet</p>
       <p className='authEmail'>Enter Otp sent to {email}</p>
-    <input type="text" className="authEmailInput" id="otpInput" placeholder="0  0  0  0  0  0" value={otp} onChange={(e)=>setOtp(e.target.value)}/>
+    <input type="text" className="authEmailInput" id="otpInput" placeholder="0  0  0  0" value={otp} onChange={(e)=>setOtp(e.target.value)}/>
       <img src={lockIcon} id="lockIconS" />
       <p className='authPwd' id="signPwd">Password</p>
       {show1 ? (
@@ -130,7 +131,7 @@ useEffect(()=>{
         <FontAwesomeIcon icon={faEyeSlash} id="SEye" onClick={handleShow1} />
       )}
       <input type={show1 ? "text" : "password"} className="authPwdInput" id="signInput2" placeholder="Password" value={pass} onChange={(e) => setPass(e.target.value)} />
-      <p className='fgtRstPwd' id="signInvalidPwdWrong">Password must be 1 uppercase 1 lowercase 1 number 1 special digit character and 8 or more characters</p>
+      {/* <p className='fgtRstPwd' id="signInvalidPwdWrong">Password must be 1 uppercase 1 lowercase 1 number 1 special digit character and 8 or more characters</p> */}
       <button type="button" className='authFgtPwdBtn' onClick={() => { SIGNUPTWO() }}>Sign Up</button>
     </div>
     {loading === true ? <Spinner animation="border" variant="light" id="loadSpinner" /> : null}

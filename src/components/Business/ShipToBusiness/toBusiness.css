@@ -9,3 +9,11 @@
     top: 190px;
     left: 55vw;
 }
+#shipbutton{
+margin-top:40px;
+margin-left:1vw;
+}
+.options{
+    font-size: 1rem;
+    font-weight: 600;
+}

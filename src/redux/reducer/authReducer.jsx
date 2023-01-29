@@ -11,7 +11,8 @@ const initialState ={
     toSignOtp:false,
     toSignUpTwo:false,
     toHome:false,
-    token:false
+    token:false,
+    toHome2:false
 }
  const AuthReducer =(state=initialState, action)=>{
     switch(action.type){
@@ -171,39 +172,11 @@ const initialState ={
                 toSignOtp:false
             }
         }
-        case "EMAIL_VERIFY_STARTED":{
-            console.log(action.payload)
-            return {
-                ...state, loading:true,toSignUpTwo:false
-            }
-        }
-        case "EMAIL_VERIFY_SUCCEDED":{
-            console.log(action.payload)
-            // localStorage.setItem("access token", action.payload.token)
-            console.log(action.payload.token)
-            return {...state,
-                loading:false,
-                response:action.payload.message[0],
-                error:"",
-                toSignUpTwo:true,
-                token:true,
-            }
-        }
-        case "EMAIL_VERIFY_FAILED":{
-            console.log(action.payload)
-            console.log(action.payload.response.data.msg)
-            return {
-                loading:false,
-                response:"",
-                error:action.payload.response.data.msg,
-                toSignUpTwo:false
-            }
-        }
         case "SIGNUP_TWO_STARTED":{
             console.log(action.payload)
             return {
                 ...state, loading:true,
-                toHome:false
+                toHome2:false
             }
         }
         case "SIGNUP_TWO_SUCCEDED":{
@@ -213,9 +186,9 @@ const initialState ={
             // sessionStorage.setItem("access token", action.payload.token)
             return {...state,
                 loading:false,
-                response:action.payload.message[0],
+                // response:action.payload.message[0],
                 error:"",
-                toHome:true,
+                toHome2:true,
                 user:action.payload.user,
             }
         }
@@ -224,8 +197,8 @@ const initialState ={
             return {
                 loading:false,
                 response:"",
-                error:action.payload.response.data.msg,
-                toHome:false
+                // error:action.payload.response.data.msg,
+                toHome2:false
             }
         }
         case "NAME_VIA_GOOGLE":{

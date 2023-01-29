@@ -11,20 +11,20 @@ const LogInUser = (data, condition) => {
             dispatch({ type: "REQUEST_STARTED" })
             await BaseUrl.post(`/auth/login/`, data)
                 .then((res) => {
-                    // toast.success(`${res.data.message[0]}`, {
-                    //     position: "top-center",
-                    //     theme: "light",
-                    // })
+                    toast.success("Login successful", {
+                        position: "top-center",
+                        theme: "light",
+                    })
                     dispatch({
                         type: "REQUEST_SUCCEDED",
                         payload: res.data
                     })
                 })
                 .catch((err) => {
-                    // toast.error(`${err.response.data.message[0]}`, {
-                    //     position: "top-center",
-                    //     theme: "light",
-                    // })
+                    toast.error(`${err.response.data.message[0]}`, {
+                        position: "top-center",
+                        theme: "light",
+                    })
                     dispatch({
                         type: "REQUEST_FAILED",
                         payload: err
@@ -42,20 +42,20 @@ const FgtPwdAction = (email, condition) => {
             dispatch({ type: "FGT_EMAIL_STARTED" })
             await BaseUrl.post(`/auth/sendemailOTP/`, { email })
                 .then((res) => {
-                    // toast.success(`${res.data.message[0]}`, {
-                    //     position: "top-center",
-                    //     theme: "light",
-                    // })
+                    toast.success("Otp sent on mail", {
+                        position: "top-center",
+                        theme: "light",
+                    })
                     dispatch({
                         type: "FGT_EMAIL_SUCCEDED",
                         payload: res.data
                     })
                 })
                 .catch((err) => {
-                    // toast.error(`${err.response.data.message[0]}`, {
-                    //     position: "top-center",
-                    //     theme: "light",
-                    // })
+                    toast.error(`${err.response.data.message[0]}`, {
+                        position: "top-center",
+                        theme: "light",
+                    })
                     dispatch({
                         type: "FGT_EMAIL_FAILED",
                         payload: err
@@ -71,20 +71,20 @@ const OtpAction = (data) => {
         dispatch({ type: "OTP_STARTED" })
         await BaseUrl.post(`/auth/verifyemailOTP/`, data)
             .then((res) => {
-                // toast.success(`${res.data.message[0]}`, {
-                //     position: "top-center",
-                //     theme: "light",
-                // })
+                toast.success("Otp verified", {
+                    position: "top-center",
+                    theme: "light",
+                })
                 dispatch({
                     type: "OTP_SUCCEDED",
                     payload: res.data
                 })
             })
             .catch((err) => {
-                // toast.error(`${err.response.data.message[0]}`, {
-                //     position: "top-center",
-                //     theme: "light",
-                // })
+                toast.error(`${err.response.data.message[0]}`, {
+                    position: "top-center",
+                    theme: "light",
+                })
                 dispatch({
                     type: "OTP_FAILED",
                     payload: err
@@ -98,10 +98,16 @@ const ResendOtpAction = (email) => {
     return async function (dispatch) {
         dispatch({ type: "RESEND_STARTED" })
         await BaseUrl.post(`/resendotp`, { email })
-            .then((res) => dispatch({
+            .then((res) => {
+                toast.success("Otp verified", {
+                    position: "top-center",
+                    theme: "light",
+                })
+                dispatch({
                 type: "RESEND_SUCCEDED",
                 payload: res.data
-            }))
+            })
+        })
             // navigate("/reset"))
             .catch((err) => {
                 toast.error(`${err.response.data.message[0]}`, {
@@ -121,18 +127,23 @@ const SignUpUser = (email) => {
     return async function (dispatch) {
             dispatch({ type: "SIGNUP_STARTED" })
             await BaseUrl.post(`/auth/signup/`, { email })
-                .then((res) => dispatch({
+                .then((res) => {
+                    toast.success("Otp sent on mail", {
+                        position: "top-center",
+                        theme: "light",
+                    })
+                    dispatch({
                     type: "SIGNUP_SUCCEDED",
                     payload: res.data
                 })
                     // navigate("/verifyemail")
-                )
+            })
                 .catch((err) => {
                     console.log(err)
-                    // toast.error(`${err.response.data.message[0]}`, {
-                    //     position: "top-center",
-                    //     theme: "light",
-                    // })
+                    toast.error(`${err.response.data.message[0]}`, {
+                        position: "top-center",
+                        theme: "light",
+                    })
                     dispatch({
                         type: "SIGNUP_FAILED",
                         payload: err
@@ -142,24 +153,6 @@ const SignUpUser = (email) => {
 }
 export { SignUpUser }
 
-const EmailAction = (data) => {
-    return async function (dispatch) {
-        dispatch({ type: "EMAIL_VERIFY_STARTED" })
-        await BaseUrl.post(`/email/verify`, data)
-            .then((res) => dispatch({
-                type: "EMAIL_VERIFY_SUCCEDED",
-                payload: res.data
-            })
-            )
-            .catch((err) => {
-                dispatch({
-                    type: "EMAIL_VERIFY_FAILED",
-                    payload: err
-                })
-            })
-    }
-}
-export { EmailAction }
 
 const SignUpResend = (email) => {
     return async function (dispatch) {
@@ -234,56 +227,4 @@ const ResetAction = (data) => {
 }
 export { ResetAction }
 
-const GoogleAction = () => {
-    return async function (dispatch) {
-        dispatch({ type: "GOOGLE_STARTED" })
-        await BaseUrl.get(`/auth/google/url`)
-            .then((res) => dispatch({
-                type: "GOOGLE_SUCCEDED",
-                payload: res.data
-            }))
-            .catch((err) => {
-                console.log(err)
-            })
 
-    }
-}
-export { GoogleAction }
-
-const GoogleTwoAction = (url) => {
-    return async function (dispatch) {
-        dispatch({ type: "GOOGLE_TWO_STARTED" })
-        await BaseUrl.get(`/auth/google?code=${url}`)
-            .then((res) => dispatch({
-                type: "GOOGLE_TWO_SUCCEDED",
-                payload: res
-            }))
-            .catch((err) => {
-                console.log(err)
-                dispatch({
-                    type: "GOOGLE_TWO_FAILED",
-                    payload: err
-                })
-            })
-
-    }
-}
-export { GoogleTwoAction }
-
-export const nameViaGoogle = (name, username) => {
-    return {
-        type: "NAME_VIA_GOOGLE",
-        payload: {
-            name, username
-        }
-    }
-}
-
-export const infoViaGoogle = (user) => {
-    return {
-        type: "INFO_VIA_GOOGLE",
-        payload: {
-            user
-        }
-    }
-}

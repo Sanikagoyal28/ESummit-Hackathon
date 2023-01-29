@@ -1,8 +1,8 @@
  #img {
     position: absolute;
-    width: 45.5vw;
-    height: 68.75vh;
-    left: 1.94vw;
+    width: 440px;
+    height: 400px;
+    left: 12vw;
     top: 28.61vh;
   }
   
@@ -10,7 +10,7 @@
     position: absolute;
     width: 33vw;
     height: 65vh;
-    left: 55vw;
+    left: 53vw;
     top: 23vh;
     display: flex;
     justify-content: center;
@@ -52,4 +52,20 @@
     margin-bottom:0;
   }
   
- 
+ .customerbutton{
+    width:8vw;
+    border-radius: 8px;
+    background: none;
+    border:none;
+    outline:none;
+    border:1px solid #6c9ee8;
+    margin-left:22vw;
+    margin-top:4px;
+    height:30px;
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.1rem;
+    line-height: 30px;
+    color:black;
+ }
